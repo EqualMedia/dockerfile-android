@@ -11,4 +11,5 @@ RUN export SDK_URL=http://dl.google.com/android/android-sdk_r23-linux.tgz; \
   wget -q ${SDK_URL}; \
   tar -xzf $(basename ${SDK_URL}); \
   rm $(basename ${SDK_URL}); \ 
-  echo y | /android-sdk-linux/tools/android update sdk --filter platform,tool,platform-tool,extra,extra-android-m2repository,build-tools-20.0.0 --no-ui --force -a
+  echo y | /android-sdk-linux/tools/android update sdk --all --filter platform,tool,platform-tool,extra,build-tools-20.0.0 --no-ui 
+RUN  echo y | /android-sdk-linux/tools/android update sdk --all --filter extra-android-m2repository --no-ui
